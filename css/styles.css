@@ -13,23 +13,23 @@
 body {
   font-family: Verdana, Tahoma, sans-serif, Helvetica, sans-serif;
   font-weight: var(--font-normal);
-  font-size: 1em;
+  font-size: 1.1em;
   line-height: 2;
   background-color: var(--background-color);
 }
 
 h1 {
-  font-size: 2.5em;
+  font-size: 3em;
   font-weight: var(--font-bold);
 }
 
 h2 {
-  font-size: 1.875em;
+  font-size: 2em;
   font-weight: var(--font-bold);
 }
 
 h3 {
-  font-size: 0.875em;
+  font-size: 1.5em;
   font-weight: var(--font-bold);
 }
 
@@ -47,6 +47,7 @@ h3 {
   min-width: 300px;
   margin: auto;
   padding: 10px;
-  border: 1px solid black;
-  background-color: rgba(255, 255, 255, 0.351);
+  color: #3564ad;
+  border: 5px inset rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.563);
 }
