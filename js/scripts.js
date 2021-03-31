@@ -13,22 +13,53 @@ let pokemonRepository = (function () {
   }
 
   function add(pokemon) {
+    if (
+      typeof pokemon === 'object' &&
+      'name' in pokemon &&
+      'height' in pokemon &&
+      'types'  in pokemon
+    ) { 
     pokemonList.push(pokemon);
+    } else {
+      console.log('pokemon is not correct');
+    }
+    }
+
+  function addListItem(pokemon) {
+  // assigns var to ul class attribute
+    let pokemonList = document.querySelector('.pokemon-list'); 
+  // creates li element
+    let listItem = document.createElement('li');
+  // creates button element
+    let button = document.createElement('button'); 
+  // returns text content of pokemonList name
+    button.innerText = pokemon.name; 
+  // adds class name to button element
+    button.classList.add('primary-button'); 
+  // append button as a child to listItem
+    listItem.appendChild(button); 
+  // append listItem as child to pokemonList  
+    pokemonList.appendChild(listItem); 
+  // prints pokemon array data of button clicked to console
+    button.addEventListener('click', function(showDetails) {
+      console.log(pokemon);
+    });
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
   }
 
   return {
+    add: add,
     getAll: getAll,
-    add: add
+    addListItem: addListItem
   };
 })();
 
-pokemonRepository.getAll().forEach(function(pokemon){
-  let name = (pokemon.name + ': ');
-  let height = (' (Height: ' + pokemon.height + ') ');
-    if (pokemon.height >= 1.5){
-      document.write('<p>' + name + height + ' - Wow, that\'s big!</p>');
-  } else {
-      document.write('<p>' + name + height + '</p>');
-  }
-})
-
+// retuns pokemonList name array inside the addListItem function
+pokemonRepository.getAll().forEach(function(pokemon) {
+  pokemonRepository.addListItem(pokemon);
+});
+// outputs pokemonList array to console
+// console.log(pokemonRepository.getAll());
