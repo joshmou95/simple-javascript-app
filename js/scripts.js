@@ -29,8 +29,8 @@ let pokemonRepository = (function () {
     listItem.appendChild(button); 
     pokemonList.appendChild(listItem); 
   // prints array data of button clicked to console
-    button.addEventListener('click', function(showDetails) {
-      console.log(pokemon);
+    button.addEventListener('click', function(event) {
+      showDetails(pokemon);
     });
   }
 
@@ -77,7 +77,8 @@ let pokemonRepository = (function () {
     getAll: getAll,
     addListItem: addListItem,
     loadList: loadList,
-    loadDetails: loadDetails
+    loadDetails: loadDetails,
+    showDetails: showDetails
   };
 })();
 
