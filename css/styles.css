@@ -1,7 +1,7 @@
 
 :root {
-  --background-color: #61d79a;
-  --primary-color: #3564ad;
+  --background-color: #32df86;
+  --primary-color: #2157ae;
   --button-color: #ffcb05;
   --font-bold: 700;
   --font-normal: 500;
@@ -17,7 +17,7 @@ body {
   font-weight: var(--font-normal);
   font-size: 1.1em;
   line-height: 2;
-  background-color: var(--background-color);
+  background-color: whitesmoke;
 }
 
 h1 {
@@ -44,31 +44,41 @@ h3 {
   padding: 10px;
 }
 
+.description {
+  text-align: center;
+  color: var(--primary-color);
+}
 .pokemon-list {
-  color: rgb(255, 255, 255);
+  background-color: var(--background-color);
   max-width: 700px;
   min-width: 300px;
   margin: auto;
   list-style: none;
+  padding: 1em 2em 1em;
   border-radius: 8px;
-  border: 3px solid var(--primary-color);
+  border: 4px solid var(--primary-color);
 }
 
 .primary-button {
-  background-color: var(--primary-color); 
+  background-color: var(--button-color);
+  color: var(--primary-color);
   border: none;
-  color: rgb(255, 255, 255);
-  padding: 16px 32px;
-  text-align: center;
+  font-family: inherit;
+  padding: 15px 30px;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
-  cursor: pointer;
-  background-color: var(--button-color);
-  color: rgb(74, 73, 128);
+  margin: 4px auto;
   border-radius: 3px;
   border: 3px solid var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s ease 0s;
+}
+
+.primary-button:focus {
+  box-shadow: inset 0 0 0 1.5px var(--primary-color);
+}
+
+.primary-button:hover {
+  background-color: #eebf02;
 }
