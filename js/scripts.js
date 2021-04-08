@@ -2,7 +2,6 @@ let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   let modalContainer = document.querySelector('#modal-container');
-  
 
   function add(pokemon) {
     if (
@@ -72,8 +71,6 @@ let pokemonRepository = (function () {
   }
 
   function showDetails(pokemon) {
-   
-
     let modalBody = document.querySelector('.modal-body');
     let modalTitle = document.querySelector('.modal-title');
     let modalHeader = document.querySelector('.modal-header');
@@ -101,7 +98,6 @@ let pokemonRepository = (function () {
     });
   }
 
-  
   return {
     add: add,
     getAll: getAll,
