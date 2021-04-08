@@ -74,11 +74,12 @@ let pokemonRepository = (function () {
   function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
 
-    let modalBody = ('.modal-body');
-    let modalTitle = ('.modal-title');
-    let modalHeader = ('.modal-header');
+    let modalBody = $('.modal-body');
+    let modalTitle = $('.modal-title');
+    let modalHeader = $('.modal-header');
 
     // Clear all existing modal content
+    // modalHeader.empty();
     modalTitle.empty();
     modalBody.empty();
 
