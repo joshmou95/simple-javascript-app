@@ -84,6 +84,13 @@ h3 {
   background-color: #eebf02;
 }
 
+.btn-secondary {
+  background-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: #456ba7;;
+}
 
 .modal-content {
   color: var(--primary-color);
