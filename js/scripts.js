@@ -72,17 +72,18 @@ let pokemonRepository = (function () {
   }
 
   function showDetails(pokemon) {
-    loadDetails(pokemon).then(function () {
+   
 
-    let modalBody = $('.modal-body');
-    let modalTitle = $('.modal-title');
-    let modalHeader = $('.modal-header');
+    let modalBody = document.querySelector('.modal-body');
+    let modalTitle = document.querySelector('.modal-title');
+    let modalHeader = document.querySelector('.modal-header');
 
     // Clear all existing modal content
     // modalHeader.empty();
-    modalTitle.empty();
-    modalBody.empty();
+    modalTitle.innerHTML = '';
+    modalBody.innerHTML = '';
 
+    loadDetails(pokemon).then(function () {
     let titleElement = document.createElement('h3');
     titleElement.innerText = pokemon.name;
 
