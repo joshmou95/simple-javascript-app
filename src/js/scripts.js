@@ -1,8 +1,6 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
-  let modalContainer = document.querySelector('#modal-container');
-  
 
   function add(pokemon) {
     if (
@@ -12,7 +10,7 @@ let pokemonRepository = (function () {
     ) { 
     pokemonList.push(pokemon);
     } else {
-      console.log('pokemon is not correct');
+      alert('pokemon is not correct');
     }
   }
 
@@ -34,7 +32,7 @@ let pokemonRepository = (function () {
     listItem.appendChild(button); 
     pokemonList.appendChild(listItem); 
   // prints array data of button clicked to console
-    button.addEventListener('click', function(event) {
+    button.addEventListener('click', function() {
       showDetails(pokemon);
     });
   }
@@ -72,14 +70,10 @@ let pokemonRepository = (function () {
   }
 
   function showDetails(pokemon) {
-   
-
     let modalBody = document.querySelector('.modal-body');
     let modalTitle = document.querySelector('.modal-title');
-    let modalHeader = document.querySelector('.modal-header');
 
     // Clear all existing modal content
-    // modalHeader.empty();
     modalTitle.innerHTML = '';
     modalBody.innerHTML = '';
 
@@ -101,7 +95,6 @@ let pokemonRepository = (function () {
     });
   }
 
-  
   return {
     add: add,
     getAll: getAll,
@@ -118,6 +111,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-
-
