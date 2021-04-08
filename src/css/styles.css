@@ -1,0 +1,112 @@
+
+:root {
+  --background-color: #32df86;
+  --primary-color: #2157ae;
+  --button-color: #ffcb05;
+  --font-bold: 700;
+  --font-normal: 500;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Verdana, Tahoma, sans-serif, Helvetica, sans-serif;
+  font-weight: var(--font-normal);
+  font-size: 1.1em;
+  line-height: 2;
+  background-image: linear-gradient(to right,rgb(255, 227, 66),rgb(189, 111, 189));
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: var(--font-bold);
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: var(--font-bold);
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: var(--font-bold);
+}
+
+.header-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 85%;
+  max-width: 700px;
+}
+
+.description {
+  text-align: center;
+  color: var(--primary-color);
+}
+
+.navbar {
+color: var(--primary-color);
+background-image: linear-gradient(to right, var(--background-color) , #b1d2c1);
+border: 4px solid var(--primary-color);
+}
+
+.list-group {
+  background-image: linear-gradient(to right, var(--background-color) , #b1d2c1);
+  max-width: 650px;
+  min-width: 300px;
+  margin: auto;
+  list-style: none;
+  padding: 1em 2em 1em;
+  border-radius: 8px;
+  border: 4px solid var(--primary-color);
+}
+
+.btn-primary {
+  width: 100%;
+  display: block;
+  background-color: var(--button-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 4px auto;
+  border-radius: 3px;
+  border: 3px solid var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s ease 0s;
+}
+
+.btn-primary:focus {
+  box-shadow: inset 0 0 0 1.5px var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: #eebf02;
+}
+
+.btn-secondary {
+  background-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: #456ba7;;
+}
+
+.modal-content {
+  color: var(--primary-color);
+  background: var(--button-color);
+  border: 3px solid var(--primary-color);
+}
+
+.pokemon-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
