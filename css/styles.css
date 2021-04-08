@@ -66,10 +66,9 @@ h3 {
   background-color: var(--button-color);
   color: var(--primary-color);
   border: none;
-  font-family: inherit;
   padding: 15px 30px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 18px;
   margin: 4px auto;
   border-radius: 3px;
   border: 3px solid var(--primary-color);
@@ -86,43 +85,10 @@ h3 {
 }
 
 
-#modal-container {
-  display: none;
-}
-
-#modal-container.is-visible {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.5);
-  overflow: auto; 
-  display: grid;
-  text-align: center;
-} 
-
- .modal {
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
+.modal-content {
+  color: var(--primary-color);
   background: var(--button-color);
-  color: var(--primary-color);
-  padding: 15px;
-  width: 85%;
-  max-width: 500px;
-  text-align: left;
-  border-radius: 4px;
   border: 3px solid var(--primary-color);
-}
-
-.modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: var(--primary-color);
-  text-decoration: underline;
 }
 
 .pokemon-image {
@@ -132,10 +98,10 @@ h3 {
   width: 50%;
 }
 
-.modal h1 {
+/* .modal h1 {
   margin-top: 0;
 }
 
 .modal p {
   margin-bottom: 0;
-} 
+}  */
