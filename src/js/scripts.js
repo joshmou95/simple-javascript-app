@@ -1,6 +1,6 @@
 let pokemonRepository = (function () {
   let pokemonList = [];
-  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=100';
 
   function add(pokemon) {
     if (
@@ -37,11 +37,10 @@ let pokemonRepository = (function () {
     });
   }
 
-  function loadList() {
-    // fetch api url to response.json
-    return fetch(apiUrl).then(function (response) {
-      return response.json();
-    }).then(function (json) {
+  async function loadList() {
+    try {
+      const response = await fetch(apiUrl);
+      const json = await response.json();
       json.results.forEach(function (item) {
         let pokemon = {
           name: item.name,
@@ -49,27 +48,27 @@ let pokemonRepository = (function () {
         };
         add(pokemon);
       });
-    }).catch(function (e) {
+    } catch (e) {
       console.error(e);
-    })
+    }
   }
 
-  function loadDetails(pokemon) {
+  async function loadDetails(pokemon) {
     let url = pokemon.detailsUrl;
     // fetch data from detailsUrl
-    return fetch(url).then(function (response) {
-      return response.json();
-    }).then(function (details) {
+    const response = await fetch(url);
+    try {
+      const details = await response.json();
       // Now we add image, height, and type
       pokemon.imageUrl = details.sprites.front_default;
       pokemon.height = details.height;
-      pokemon.types = details.types;
-    }).catch(function (e) {
+      pokemon.type = details.types;
+    } catch(e) {
       console.error(e);
-    });
+    };
   }
 
-  function showDetails(pokemon) {
+  async function  showDetails(pokemon) {
     let modalBody = document.querySelector('.modal-body');
     let modalTitle = document.querySelector('.modal-title');
 
@@ -77,22 +76,21 @@ let pokemonRepository = (function () {
     modalTitle.innerHTML = '';
     modalBody.innerHTML = '';
 
-    loadDetails(pokemon).then(function () {
-    let titleElement = document.createElement('h3');
-    titleElement.innerText = pokemon.name;
+    await loadDetails(pokemon);
+    // let titleElement = document.createElement('h3');
+    modalTitle.innerText = pokemon.name;
 
-    let contentElement = document.createElement('p');
-    contentElement.innerText = 'Height: ' + pokemon.height;
+    // let contentElement = document.createElement('p');
+    modalBody.innerText = 'Height: ' + pokemon.height + pokemon.types;
 
     let myImage = document.createElement('img');
     myImage.classList.add('pokemon-image');
     myImage.src = pokemon.imageUrl;
 
-    modalTitle.appendChild(titleElement);
-    modalBody.appendChild(contentElement);
+    // modalTitle.appendChild(titleElement);
+    // modalBody.appendChild(contentElement);
     modalBody.appendChild(myImage);
 
-    });
   }
 
   return {
