@@ -77,18 +77,22 @@ let pokemonRepository = (function () {
     modalBody.innerHTML = '';
 
     await loadDetails(pokemon);
-    // let titleElement = document.createElement('h3');
-    modalTitle.innerText = pokemon.name;
+    let titleElement = document.createElement('h3');
+    titleElement.innerText = pokemon.name;
 
-    // let contentElement = document.createElement('p');
-    modalBody.innerText = 'Height: ' + pokemon.height + pokemon.types;
+    let contentElement = document.createElement('p');
+    contentElement.innerText = 'Height: ' + pokemon.height;
+
+    // let typeElement = document.createElement('p');
+    // typeElement.innerText = pokemon.type;
 
     let myImage = document.createElement('img');
     myImage.classList.add('pokemon-image');
     myImage.src = pokemon.imageUrl;
 
-    // modalTitle.appendChild(titleElement);
-    // modalBody.appendChild(contentElement);
+    modalTitle.appendChild(titleElement);
+    modalBody.appendChild(contentElement);
+    // modalBody.appendChild(typeElement);
     modalBody.appendChild(myImage);
 
   }
