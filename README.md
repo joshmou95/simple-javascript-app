@@ -4,6 +4,8 @@ Project Description:
 
 A small web application with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of a list of items. Clicking on an item brings up more detail (name, height, types, image).
 
+![pokemon-gif](https://user-images.githubusercontent.com/80426764/136884894-f6fcd888-6cce-4fd0-995e-28c4e4150232.gif)
+
 How to get the project running:
 Create the Pokemon items with the help of an IIFE function Variable, Arrays and objects.
 
